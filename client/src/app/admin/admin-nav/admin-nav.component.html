@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <button (click)="handleToggle()">
+      <mat-icon fontIcon="keyboard_arrow_right">Panel</mat-icon>
+    </button>
+  </mat-sidenav-content>
+  <mat-sidenav [(opened)]="opened">
+    <div class="link-container">
+      <a mat-stroked-button routerLink="/">Back To Store</a>
+      <a mat-stroked-button routerLink="/admin">Admin Panel</a>
+      <a mat-stroked-button routerLink="new-category">New Category</a>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>
