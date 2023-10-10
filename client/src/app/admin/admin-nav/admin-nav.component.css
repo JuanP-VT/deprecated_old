@@ -1,17 +1,20 @@
 mat-sidenav-container {
+  position: fixed;
   background: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mat-sidenav-content {
+  width: min-content;
   height: 100vh;
-  width: 100vw;
 }
 
+mat-sidenav,
+mat-sidenav-content {
+  width: min-content;
+}
 .link-container {
-  padding: 3px;
   display: flex;
   flex-direction: column;
+}
+mat-sidenav {
+  width: min-content;
+
+  width: 200px;
 }
