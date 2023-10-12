@@ -1,8 +1,7 @@
-export interface ErrorResponse {
-  code: number;
-  message: string;
-}
-
-export interface SuccessfulResponse<T> {
-  data: T;
+export interface ProductCategoryAPIResponse<T> {
+  error?: {
+    message: string;
+    code: number;
+  };
+  data?: T;
 }
