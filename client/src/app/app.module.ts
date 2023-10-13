@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddNewCategoryComponent } from './admin/add-new-category/add-new-category.component';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductCategoryComponent } from './admin/product-category/product-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreNavComponent,
     AdminNavComponent,
     AddNewCategoryComponent,
+    ProductCategoryComponent,
   ],
   imports: [
     BrowserModule,
