@@ -17,6 +17,7 @@ import { catchError, retry, throwError } from 'rxjs';
 })
 export class ProductCategoryService {
   apiUrl = environment.productCategoryUrl;
+
   constructor(private http: HttpClient) {}
 
   //Error handling on http request
