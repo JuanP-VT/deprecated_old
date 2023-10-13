@@ -12,7 +12,10 @@ import { AdminComponent } from './admin/admin.component';
 import { StoreNavComponent } from './shared/components/store-nav/store-nav.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AddNewCategoryComponent } from './admin/add-new-category/add-new-category.component';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +30,13 @@ import { AddNewCategoryComponent } from './admin/add-new-category/add-new-catego
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

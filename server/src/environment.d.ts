@@ -9,7 +9,7 @@ declare global {
       // port for database connections
       DB_PORT: string;
       // URL for connecting to MongoDB
-      MONGO_URL: string;
+      MONGODB_CONNECTION_STRING: string;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StoreNavComponent } from './store-nav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 describe('StoreNavComponent', () => {
   let component: StoreNavComponent;
@@ -8,7 +9,8 @@ describe('StoreNavComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StoreNavComponent]
+      declarations: [StoreNavComponent],
+      imports: [MatToolbarModule],
     });
     fixture = TestBed.createComponent(StoreNavComponent);
     component = fixture.componentInstance;
