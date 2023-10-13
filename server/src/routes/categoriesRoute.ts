@@ -3,7 +3,15 @@
   It provides endpoints to fetch all categories and create new ones.
   The code also includes data validation and error handling for each route.
 
-  Possible status : 200, 500, 400, 409 , 201,
+
+  interface ProductCategoryAPIResponse<T> {
+  error?: {
+    message: string;
+    code: number;
+  };
+  data?: T;
+}
+
 */
 import express from "express";
 import { categoryModel } from "../Models/category";
@@ -43,7 +51,7 @@ categoriesRoute.post("/", async (req, res) => {
 
     // if validation fails send error details
     if (errorMessages !== undefined && errorMessages?.length > 0) {
-      res.json({ message: errorMessages[0] });
+      res.json({ error: { message: errorMessages[0] }, code: 403 });
       return;
     }
 
@@ -51,7 +59,7 @@ categoriesRoute.post("/", async (req, res) => {
     const findDuplicate = await categoryModel.findOne({ name });
     if (findDuplicate) {
       // Respond with a 409 Conflict status code for duplicate entries
-      res.json({ message: "Category name must be unique" });
+      res.json({ error: { message: "Name must be unique" }, code: 409 });
       return;
     }
 
