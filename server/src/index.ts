@@ -1,8 +1,8 @@
 import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import cors from "cors";
-import categoriesRoute from "./routes/categoriesRoute";
+import productCategoryRoute from "./routes/productCategoryRoute";
 //dotenv file
 dotenv.config();
 
@@ -19,7 +19,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Express + Typescript server");
 });
 
-app.use("/categories", categoriesRoute);
+app.use("/product-category", productCategoryRoute);
 app.listen(port, () => {
   console.log(`App is running on port ${port}`);
 });

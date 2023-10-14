@@ -17,13 +17,13 @@ import express from "express";
 import { categoryModel } from "../Models/category";
 import productCategory from "../factory/product-category";
 import { productCategoryValidationSchema } from "../validation/productCategory";
-const categoriesRoute = express.Router();
+const productCategoryRoute = express.Router();
 // Route: Get all categories
-categoriesRoute.get("/", async (req, res) => {
+productCategoryRoute.get("/", async (req, res) => {
   try {
     // Fetch all categories from the database
     const allCategories = await categoryModel.find();
-    res.json(allCategories); // Respond with a JSON array of categories
+    res.json({ data: allCategories }); // Respond with a JSON array of categories
   } catch (err) {
     // Handle any errors and respond with a 500 Internal Server Error
     res.status(500).json({ error: err });
@@ -31,7 +31,7 @@ categoriesRoute.get("/", async (req, res) => {
 });
 
 // Route: Create a new product category
-categoriesRoute.post("/", async (req, res) => {
+productCategoryRoute.post("/", async (req, res) => {
   try {
     // Extract data from the request body
     const name = req.body.name;
@@ -76,4 +76,4 @@ categoriesRoute.post("/", async (req, res) => {
   }
 });
 
-export default categoriesRoute;
+export default productCategoryRoute;
