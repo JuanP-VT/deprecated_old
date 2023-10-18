@@ -17,6 +17,8 @@ import { AddNewCategoryComponent } from './admin/add-new-category/add-new-catego
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCategoryComponent } from './admin/product-category/product-category.component';
+import { ProductCategoryCardComponent } from './shared/components/product-category-card/product-category-card.component';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { ProductCategoryComponent } from './admin/product-category/product-categ
     AdminNavComponent,
     AddNewCategoryComponent,
     ProductCategoryComponent,
+    ProductCategoryCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { ProductCategoryComponent } from './admin/product-category/product-categ
     MatSidenavModule,
     MatInputModule,
     HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
