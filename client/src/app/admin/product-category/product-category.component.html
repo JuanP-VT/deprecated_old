@@ -1,1 +1,6 @@
-<p>product-category works!</p>
+<div class="category-container">
+  <app-product-category-card
+    *ngFor="let category of categoryList"
+    [category]="category"
+  ></app-product-category-card>
+</div>
