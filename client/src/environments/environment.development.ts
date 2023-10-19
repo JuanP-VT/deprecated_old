@@ -1,3 +1,3 @@
 export const environment = {
-  productCategoryUrl: '',
+  productCategoryUrl: 'https://fashion-api.fly.dev/product-category',
 };

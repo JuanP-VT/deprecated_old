@@ -1,8 +1,8 @@
+<app-product-category-search
+  (customEvent)="handleEvent($event)"
+  [categoryList]="categoryList"
+></app-product-category-search>
 <div class="category-container">
-  <app-product-category-search
-    (customEvent)="handleEvent($event)"
-    [categoryList]="categoryList"
-  ></app-product-category-search>
   <app-product-category-card
     *ngFor="let category of filteredCategoryList"
     [category]="category"
