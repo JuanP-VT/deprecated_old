@@ -9,11 +9,17 @@ import { ProductCategory } from 'src/app/shared/types/product-category';
 export class ProductCategoryComponent implements OnInit {
   constructor(public productCategoryService: ProductCategoryService) {}
   categoryList: ProductCategory[] = [];
+  filteredCategoryList: ProductCategory[] = [];
   ngOnInit(): void {
     this.productCategoryService.getCategories().subscribe((response) => {
       if (response.data) {
         this.categoryList = response.data;
+        this.filteredCategoryList = response.data;
       }
     });
+  }
+
+  handleEvent(event: ProductCategory[]) {
+    this.filteredCategoryList = event;
   }
 }

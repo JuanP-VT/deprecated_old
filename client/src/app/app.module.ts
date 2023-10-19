@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductCategoryComponent } from './admin/product-category/product-category.component';
 import { ProductCategoryCardComponent } from './shared/components/product-category-card/product-category-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { ProductCategorySearchComponent } from './admin/product-category-search/product-category-search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     AddNewCategoryComponent,
     ProductCategoryComponent,
     ProductCategoryCardComponent,
+    ProductCategorySearchComponent,
   ],
   imports: [
     BrowserModule,
