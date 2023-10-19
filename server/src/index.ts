@@ -7,7 +7,7 @@ import productCategoryRoute from "./routes/productCategoryRoute";
 dotenv.config();
 
 const app: Application = express();
-const port = process.env.DB_PORT || 8800;
+const port = 3000;
 
 //setup JSON
 app.use(express.json());
