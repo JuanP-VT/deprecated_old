@@ -15,6 +15,11 @@ export class ProductCategorySearchComponent {
   @Output() customEvent = new EventEmitter<ProductCategory[]>();
   name = new FormControl('');
 
+  opened = false;
+
+  handleToggle = () => {
+    this.opened = !this.opened;
+  };
   onChange() {
     //return original array if name is empty
     if (this.name.value === '') {
