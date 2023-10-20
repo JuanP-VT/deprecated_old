@@ -28,7 +28,6 @@ export class ProductCategoryCardEditComponent implements OnChanges {
   //update form controls when @Input props change
   ngOnChanges(changes: SimpleChanges) {
     if (changes['productCategory'] && changes['productCategory'].currentValue) {
-      console.log('changes');
       this.name.setValue(changes['productCategory'].currentValue.name);
       this.imageUrl.setValue(changes['productCategory'].currentValue.imageUrl);
       this._id = this.productCategory._id ?? '';
