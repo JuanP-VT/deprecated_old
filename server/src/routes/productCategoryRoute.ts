@@ -17,6 +17,7 @@ import express from "express";
 import { categoryModel } from "../Models/category";
 import productCategory from "../factory/product-category";
 import { productCategoryValidationSchema } from "../validation/productCategory";
+import { isValidObjectId } from "mongoose";
 const productCategoryRoute = express.Router();
 // Route: Get all categories
 productCategoryRoute.get("/", async (req, res) => {
@@ -75,5 +76,39 @@ productCategoryRoute.post("/", async (req, res) => {
     res.status(500);
   }
 });
-
+//Route : edit existing product category
+// required fields name:string imageUrl:string _id: a valid MongoDB ID
+productCategoryRoute.put("/", async (req, res) => {
+  const name = req.body.name;
+  const imageUrl = req.body.imageUrl;
+  const _id = req.body._id;
+  //check that request body contains required fields
+  if (name && imageUrl && _id) {
+    //check that id is a valid MongoDb ObjectId
+    if (isValidObjectId(_id)) {
+      const updatedCategory = productCategory(name, imageUrl);
+      //look for object by id
+      //if it is found then it gets updated
+      const find = await categoryModel.findByIdAndUpdate(
+        { _id },
+        updatedCategory
+      );
+      //if not found return feedback
+      if (find === null) {
+        res.json({ error: "Id not found" });
+      }
+      res.json({ data: find });
+      return;
+    } else {
+      res.json({ error: "Invalid id format" });
+      return;
+    }
+  }
+  res.json({
+    error: {
+      message: "Missing fields",
+      status: 404,
+    },
+  });
+});
 export default productCategoryRoute;
