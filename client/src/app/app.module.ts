@@ -21,6 +21,8 @@ import { ProductCategoryCardComponent } from './shared/components/product-catego
 import { MatCardModule } from '@angular/material/card';
 import { ProductCategorySearchComponent } from './admin/product-category-search/product-category-search.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ProductCategoryCardEditComponent } from './shared/components/product-category-card/product-category-card-edit/product-category-card-edit.component';
+import { ProductCategoryCardViewComponent } from './shared/components/product-category-card/product-category-card-view/product-category-card-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ProductCategoryComponent,
     ProductCategoryCardComponent,
     ProductCategorySearchComponent,
+    ProductCategoryCardEditComponent,
+    ProductCategoryCardViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,10 @@
-<mat-card *ngIf="!isOnEditMode">
-  <div class="card-header">
-    <mat-card-title>{{ category.name }}</mat-card-title>
-    <mat-icon (click)="handleClick()">edit</mat-icon>
-  </div>
-  <img mat-card-avatar [src]="category.imageUrl" />
-</mat-card>
-
-<div class="edit-container" *ngIf="isOnEditMode">
-  <mat-card>
-    <div class="container">
-      <form class="form mat-typography">
-        <mat-icon (click)="handleClick()">keyboard_arrow_left</mat-icon>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput [formControl]="name" />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Image URL</mat-label>
-          <input matInput [formControl]="imageUrl" />
-        </mat-form-field>
-        <button mat-stroked-button (click)="handleSubmit()">Submit</button>
-      </form>
-      <div class="feedback">{{ feedback }}</div>
-    </div>
-  </mat-card>
-</div>
+<app-product-category-card-view
+  *ngIf="!isOnEditMode"
+  [productCategory]="productCategory"
+  (changeEvent)="handleViewChange($event)"
+></app-product-category-card-view>
+<app-product-category-card-edit
+  *ngIf="isOnEditMode"
+  [productCategory]="productCategory"
+  (changeEvent)="handleViewChange($event)"
+></app-product-category-card-edit>
