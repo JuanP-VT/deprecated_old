@@ -46,10 +46,17 @@ export class ProductCategoryService {
       .pipe(retry(3), catchError(this.handleError));
   };
 
-  //Create new category
+  //Create new product category
   createCategory = (category: ProductCategory) => {
     return this.http
       .post<ProductCategoryAPIResponse<ProductCategory>>(this.apiUrl, category)
+      .pipe(retry(3), catchError(this.handleError));
+  };
+
+  //Update existing product category
+  updateCategory = (category: ProductCategory) => {
+    return this.http
+      .put<ProductCategoryAPIResponse<ProductCategory[]>>(this.apiUrl, category)
       .pipe(retry(3), catchError(this.handleError));
   };
 }
