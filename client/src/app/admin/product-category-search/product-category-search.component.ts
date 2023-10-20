@@ -14,7 +14,6 @@ export class ProductCategorySearchComponent {
   @Input({ required: true }) categoryList!: ProductCategory[];
   @Output() onSearchEvent = new EventEmitter<ProductCategory[]>();
   name = new FormControl('');
-
   opened = false;
 
   handleToggle = () => {

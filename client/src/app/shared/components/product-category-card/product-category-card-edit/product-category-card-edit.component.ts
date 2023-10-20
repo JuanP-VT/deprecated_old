@@ -18,6 +18,7 @@ import productCategory from 'src/app/shared/factory/product-category';
 export class ProductCategoryCardEditComponent implements OnChanges {
   @Input({ required: true }) productCategory!: ProductCategory;
   @Output() isOnEditModeEvent = new EventEmitter<boolean>();
+  @Output() requestCategoryListEvent = new EventEmitter();
   constructor(public ProductCategoryService: ProductCategoryService) {} //inject service
   _id = '';
   feedback = '';
@@ -27,6 +28,7 @@ export class ProductCategoryCardEditComponent implements OnChanges {
   //update form controls when @Input props change
   ngOnChanges(changes: SimpleChanges) {
     if (changes['productCategory'] && changes['productCategory'].currentValue) {
+      console.log('changes');
       this.name.setValue(changes['productCategory'].currentValue.name);
       this.imageUrl.setValue(changes['productCategory'].currentValue.imageUrl);
       this._id = this.productCategory._id ?? '';
@@ -49,7 +51,10 @@ export class ProductCategoryCardEditComponent implements OnChanges {
       this.ProductCategoryService.updateCategory(newCategoryWithId).subscribe(
         () => {
           this.feedback = 'edit was successful';
-          setTimeout(() => (this.feedback = ''), 2000);
+          setTimeout(() => {
+            this.feedback = '';
+            this.requestCategoryListEvent.emit();
+          }, 2000);
         },
         (error) => {
           this.feedback = error?.error?.message ?? 'An error occurred';

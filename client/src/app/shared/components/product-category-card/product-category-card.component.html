@@ -7,4 +7,5 @@
   *ngIf="isOnEditMode"
   [productCategory]="productCategory"
   (isOnEditModeEvent)="setIsOnEditMode($event)"
+  (requestCategoryListEvent)="handleCategoryListEvent()"
 ></app-product-category-card-edit>

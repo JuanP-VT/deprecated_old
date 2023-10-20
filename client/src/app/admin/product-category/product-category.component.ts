@@ -13,12 +13,20 @@ export class ProductCategoryComponent implements OnInit {
   ngOnInit(): void {
     this.productCategoryService.getCategories().subscribe((response) => {
       if (response.data) {
+        this.categoryList = [...response.data];
+        this.filteredCategoryList = [...response.data];
+      }
+    });
+  }
+  //allow child components request category lists
+  fetchProductCategoryList() {
+    this.productCategoryService.getCategories().subscribe((response) => {
+      if (response.data) {
         this.categoryList = response.data;
         this.filteredCategoryList = response.data;
       }
     });
   }
-
   //search
   handleSearch(event: ProductCategory[]) {
     this.filteredCategoryList = event;

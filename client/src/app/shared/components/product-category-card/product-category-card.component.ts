@@ -7,10 +7,15 @@ import type { ProductCategory } from '../../types/product-category';
 })
 export class ProductCategoryCardComponent {
   @Input({ required: true }) productCategory!: ProductCategory;
+  @Output() requestCategoryListEvent = new EventEmitter();
   feedback = '';
   isOnEditMode = false;
 
   setIsOnEditMode(event: boolean) {
     this.isOnEditMode = event;
+  }
+
+  handleCategoryListEvent() {
+    this.requestCategoryListEvent.emit();
   }
 }
