@@ -12,7 +12,7 @@ import { ProductCategory } from 'src/app/shared/types/product-category';
 })
 export class ProductCategorySearchComponent {
   @Input({ required: true }) categoryList!: ProductCategory[];
-  @Output() customEvent = new EventEmitter<ProductCategory[]>();
+  @Output() onSearchEvent = new EventEmitter<ProductCategory[]>();
   name = new FormControl('');
 
   opened = false;
@@ -23,13 +23,13 @@ export class ProductCategorySearchComponent {
   onChange() {
     //return original array if name is empty
     if (this.name.value === '') {
-      this.customEvent.emit(this.categoryList);
+      this.onSearchEvent.emit(this.categoryList);
     }
     const filterByName = this.categoryList.filter((category) =>
       category.name
         .toLowerCase()
         .includes(this.name.value?.toLocaleLowerCase() ?? '')
     );
-    this.customEvent.emit(filterByName);
+    this.onSearchEvent.emit(filterByName);
   }
 }

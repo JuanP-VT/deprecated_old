@@ -19,7 +19,8 @@ export class ProductCategoryComponent implements OnInit {
     });
   }
 
-  handleEvent(event: ProductCategory[]) {
+  //search
+  handleSearch(event: ProductCategory[]) {
     this.filteredCategoryList = event;
   }
 }

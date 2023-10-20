@@ -2,7 +2,7 @@
   <mat-card>
     <div class="container">
       <form class="form mat-typography">
-        <mat-icon (click)="handleClick()">keyboard_arrow_left</mat-icon>
+        <mat-icon (click)="setIsOnEditMode()">keyboard_arrow_left</mat-icon>
         <mat-form-field>
           <mat-label>Name</mat-label>
           <input matInput [formControl]="name" />

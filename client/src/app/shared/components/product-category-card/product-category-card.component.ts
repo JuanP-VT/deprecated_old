@@ -10,7 +10,7 @@ export class ProductCategoryCardComponent {
   feedback = '';
   isOnEditMode = false;
 
-  handleViewChange(event: boolean) {
+  setIsOnEditMode(event: boolean) {
     this.isOnEditMode = event;
   }
 }

@@ -1,10 +1,10 @@
 <app-product-category-card-view
   *ngIf="!isOnEditMode"
   [productCategory]="productCategory"
-  (changeEvent)="handleViewChange($event)"
+  (isOnEditModeEvent)="setIsOnEditMode($event)"
 ></app-product-category-card-view>
 <app-product-category-card-edit
   *ngIf="isOnEditMode"
   [productCategory]="productCategory"
-  (changeEvent)="handleViewChange($event)"
+  (isOnEditModeEvent)="setIsOnEditMode($event)"
 ></app-product-category-card-edit>

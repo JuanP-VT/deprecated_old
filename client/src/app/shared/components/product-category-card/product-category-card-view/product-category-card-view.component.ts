@@ -8,10 +8,10 @@ import { ProductCategory } from 'src/app/shared/types/product-category';
 })
 export class ProductCategoryCardViewComponent {
   @Input({ required: true }) productCategory!: ProductCategory;
-  @Output() changeEvent = new EventEmitter<boolean>();
+  @Output() isOnEditModeEvent = new EventEmitter<boolean>();
 
   //Change into edit mode
   handleClick() {
-    this.changeEvent.emit(true);
+    this.isOnEditModeEvent.emit(true);
   }
 }
