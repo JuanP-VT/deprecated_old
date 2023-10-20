@@ -10,7 +10,10 @@ export class ProductCategoryCardViewComponent {
   @Input({ required: true }) productCategory!: ProductCategory;
   @Output() isOnEditModeEvent = new EventEmitter<boolean>();
 
-  //Change into edit mode
+  /**
+   * Emits an event to notify parent components to switch to edit mode
+   * when this method is triggered by a click event.
+   */
   handleClick() {
     this.isOnEditModeEvent.emit(true);
   }
