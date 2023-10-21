@@ -17,12 +17,12 @@ import { AddNewCategoryComponent } from './admin/add-new-category/add-new-catego
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCategoryComponent } from './admin/product-category/product-category.component';
-import { ProductCategoryCardComponent } from './shared/components/product-category-card/product-category-card.component';
+import { ProductCategoryCardComponent } from './admin/product-category/product-category-card/product-category-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProductCategorySearchComponent } from './admin/product-category-search/product-category-search.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ProductCategoryCardEditComponent } from './shared/components/product-category-card/product-category-card-edit/product-category-card-edit.component';
-import { ProductCategoryCardViewComponent } from './shared/components/product-category-card/product-category-card-view/product-category-card-view.component';
+import { ProductCategoryCardEditComponent } from './admin/product-category/product-category-card/product-category-card-edit/product-category-card-edit.component';
+import { ProductCategoryCardViewComponent } from './admin/product-category/product-category-card/product-category-card-view/product-category-card-view.component';
 @NgModule({
   declarations: [
     AppComponent,

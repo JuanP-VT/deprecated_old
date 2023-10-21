@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import type { ProductCategory } from '../../types/product-category';
+import type { ProductCategory } from '../../../shared/types/product-category';
 @Component({
   selector: 'app-product-category-card',
   templateUrl: './product-category-card.component.html',
