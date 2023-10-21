@@ -3,7 +3,6 @@ mat-card-title {
   font-weight: 300;
 }
 mat-card {
-  width: 300px;
   padding: 5px;
   display: flex;
   flex-direction: column;
