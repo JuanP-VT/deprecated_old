@@ -1,0 +1,7 @@
+mat-sidenav-container {
+  position: absolute;
+  left: 0;
+  height: 100px;
+  padding: 15px;
+  margin-top: 10px;
+}

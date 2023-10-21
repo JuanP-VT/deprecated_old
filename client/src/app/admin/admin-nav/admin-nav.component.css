@@ -3,6 +3,7 @@ mat-sidenav-container {
   background: none;
   width: min-content;
   height: 100vh;
+  right: 0;
 }
 
 mat-sidenav,

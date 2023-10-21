@@ -1,0 +1,12 @@
+<app-product-category-search
+  (onSearchEvent)="handleSearch($event)"
+  [categoryList]="categoryList"
+></app-product-category-search>
+<h1 class="mat-headline-4">Product Categories</h1>
+<div class="category-container">
+  <app-product-category-card
+    *ngFor="let category of filteredCategoryList"
+    [productCategory]="category"
+    (requestCategoryListEvent)="fetchProductCategoryList()"
+  ></app-product-category-card>
+</div>

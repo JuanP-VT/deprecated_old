@@ -1,0 +1,19 @@
+<div class="edit-container">
+  <mat-card>
+    <div class="container">
+      <form class="form mat-typography">
+        <mat-icon (click)="setIsOnEditMode()">keyboard_arrow_left</mat-icon>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Image URL</mat-label>
+          <input matInput [formControl]="imageUrl" />
+        </mat-form-field>
+        <button mat-stroked-button (click)="handleSubmit()">Submit</button>
+      </form>
+      <div class="feedback">{{ feedback }}</div>
+    </div>
+  </mat-card>
+</div>
