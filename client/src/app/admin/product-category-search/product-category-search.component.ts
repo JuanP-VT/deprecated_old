@@ -1,6 +1,3 @@
-//Input a list of product category,
-// component will have internally an input so the user type a name
-// componenet will filter the given input array by name and return it to the parent component
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ProductCategory } from 'src/app/shared/types/product-category';
