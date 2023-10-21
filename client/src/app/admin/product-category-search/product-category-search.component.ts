@@ -1,3 +1,25 @@
+/**
+ * ProductCategorySearchComponent
+ *
+ * A component designed to filter and search through a list of product categories.
+ *
+ * Features:
+ * - Receives a list of product categories as an input.
+ * - Provides a form control (`name`) to input the search term.
+ * - Filters the received product category list based on the search term and emits the
+ *   filtered list through the `onSearchEvent` emitter.
+ * - Provides a toggle functionality to show or hide the search component.
+ *
+ * User Interaction:
+ * - As the user types into the search input, the `onChange` method is triggered which:
+ *   - Emits the entire category list if the search input is empty.
+ *   - Filters the category list based on the input name and emits the filtered list.
+ * - The `handleToggle` method is designed to toggle the display state (`opened` property)
+ *   of the search component, potentially to show or hide additional details or controls.
+ *
+ * Dependencies:
+ * - ProductCategory type: Represents the structure of an individual product category.
+ */
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ProductCategory } from 'src/app/shared/types/product-category';

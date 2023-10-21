@@ -1,3 +1,24 @@
+/**
+ * ProductCategoryCardEditComponent
+ *
+ * This component provides an interface to edit a product category.
+ *
+ * Features:
+ * - Receives a product category as an input.
+ * - Displays form controls (name and imageUrl) to edit the properties of the product category.
+ * - Reflects changes in the input product category to the form controls using the ngOnChanges lifecycle hook.
+ * - Allows the user to submit the edited category, calling the ProductCategoryService to update the category.
+ * - Emits an event to notify the parent component to switch between edit mode and view mode.
+ * - Provides feedback to the user upon successful edit or if an error occurs.
+ * - After a successful edit, it emits an event to request an updated list of product categories.
+ *
+ * Dependencies:
+ * - ProductCategoryService: Used to update the product category.
+ * - productCategory factory: Used to create a new product category object.
+ *
+ * Note:
+ * The component assumes the existence of a product category input, and this input is mandatory.
+ */
 import {
   Component,
   Input,
