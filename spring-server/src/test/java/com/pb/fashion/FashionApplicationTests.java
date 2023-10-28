@@ -1,4 +1,4 @@
-package com.pablodev.fashion;
+package com.pb.fashion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
