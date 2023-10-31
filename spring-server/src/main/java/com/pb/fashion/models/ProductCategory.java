@@ -21,7 +21,7 @@ public class ProductCategory {
     public ProductCategory() {
     }
 
-    ProductCategory(String name, String imageUrl) {
+    public ProductCategory(String name, String imageUrl) {
         this.name = name;
         this.imageUrl = imageUrl;
     }
