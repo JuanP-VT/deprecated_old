@@ -53,6 +53,23 @@ public class ProductCategoryController {
         }
     }
 
-
+    @PutMapping
+    public ResponseEntity<?>  editProductCategory(@Valid @RequestBody ProductCategory productCategory, BindingResult result){
+        if (result.hasErrors()) {
+            Map<String, String> errorMap = new HashMap<>();
+            for (FieldError error : result.getFieldErrors()) {
+                errorMap.put(error.getField(), error.getDefaultMessage());
+            }
+            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
+        }
+       try{
+           ProductCategory editedProductCategory = productCategoryService.editProductCategory(productCategory);
+           return new ResponseEntity<ProductCategory>(editedProductCategory, HttpStatus.OK);
+       }catch (DataIntegrityViolationException e){
+           return new ResponseEntity<String>("Name already exist", HttpStatus.CONFLICT);
+       } catch (Exception e){
+           return new ResponseEntity<String>("An error occurred", HttpStatus.INTERNAL_SERVER_ERROR);
+       }
+    }
 }
 
