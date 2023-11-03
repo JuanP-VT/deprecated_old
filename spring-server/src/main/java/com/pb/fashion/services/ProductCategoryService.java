@@ -3,6 +3,8 @@ package com.pb.fashion.services;
 import com.pb.fashion.models.ProductCategory;
 import com.pb.fashion.repositories.ProductCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +26,18 @@ public class ProductCategoryService {
         return productCategoryRepository.save(productCategory);
     }
 
+    //Delete category
+    public ProductCategory deleteProductCategory(Long id){
+            //check if category product with id exist
+        Optional<ProductCategory> optionalProductCategory = productCategoryRepository.findById(id);
+        if(optionalProductCategory.isPresent()){
+            productCategoryRepository.deleteById(id);
+
+            return  optionalProductCategory.get();
+        }else{
+            throw  new NoSuchElementException("Id not found");
+        }
+    }
     //Receive an existing id ProductCategoryClass to be updated
     public ProductCategory editProductCategory(ProductCategory productCategory){
 
@@ -35,7 +49,7 @@ public class ProductCategoryService {
             existingProductCategory.setImageUrl(productCategory.getImageUrl());
             return productCategoryRepository.save(existingProductCategory);
         }else {
-            throw new NoSuchElementException("Product category with id" + productCategory.getId() + "not found");
+            throw new NoSuchElementException("Id not found");
         }
 
     }

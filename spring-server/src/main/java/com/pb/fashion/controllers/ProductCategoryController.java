@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/product-category")
@@ -41,6 +42,7 @@ public class ProductCategoryController {
         }
         try {
             // Try to create
+            productCategory.setId(null); //ignore id if provided
             ProductCategory newProductCategory = productCategoryService.saveProductCategory(productCategory);
             return new ResponseEntity<ProductCategory>(newProductCategory, HttpStatus.CREATED);
 
@@ -67,9 +69,23 @@ public class ProductCategoryController {
            return new ResponseEntity<ProductCategory>(editedProductCategory, HttpStatus.OK);
        }catch (DataIntegrityViolationException e){
            return new ResponseEntity<String>("Name already exist", HttpStatus.CONFLICT);
-       } catch (Exception e){
+
+       }catch (NoSuchElementException e){
+           return new ResponseEntity<String>("Invalid Id",HttpStatus.NOT_FOUND);
+       }
+       catch (Exception e){
            return new ResponseEntity<String>("An error occurred", HttpStatus.INTERNAL_SERVER_ERROR);
        }
+    }
+    @DeleteMapping
+    public ResponseEntity<?> deleteProductCategory(@RequestBody ProductCategory productCategory ){
+
+        try{
+           ProductCategory deletedProductCategory= productCategoryService.deleteProductCategory(productCategory.getId());
+            return new ResponseEntity<ProductCategory>(deletedProductCategory,HttpStatus.GONE);
+        }catch (NoSuchElementException e){
+            return new ResponseEntity<String>("Invalid Id",HttpStatus.NOT_FOUND);
+        }
     }
 }
 
