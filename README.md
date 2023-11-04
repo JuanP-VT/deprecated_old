@@ -1,60 +1,6 @@
-# Shein-style eCommerce Project
+#Update Moved repository
+Initially, I chose the MEAN stack (MongoDB, Express.js, Angular, and Node.js) for this project as I was keen on learning Angular. Having prior familiarity with Express and Node.js, I believed it would streamline the development process. However, as I delved deeper, I observed that the unopinionated nature of Express, coupled with my burgeoning backend development expertise, occasionally led to suboptimal design decisions.
 
-This project is an eCommerce website developed to learn and enhance skills in Angular and the MEAN stack (MongoDB, Express.js, Angular, and Node.js). It takes inspiration from the popular fashion platform Shein but includes essential eCommerce features such as user authentication, product management, and the shopping experience.
+Seeking to broaden my skillset and evolve as a developer, I decided to transition to a more robust backend framework—Spring Boot. This change also presented an opportunity to transition from NoSQL (MongoDB) to a SQL-based database, enriching my understanding of different database paradigms.
 
-## Key Features
-
-### Responsive Design
-- The website is fully responsive, adapting to different screen sizes and devices, providing an optimal user experience on both mobile and desktop devices.
-
-### User Authentication and Authorization
-- Users can register, log in, and manage their accounts.
-- Administrators have access to a special admin panel with extended permissions.
-
-### Store and Product Catalog
-- Showcases a variety of products available for purchase.
-- Users can browse by categories and search for specific products.
-
-### Search Filters and Pagination
-- Facilitates product search using filters such as category, price, sizes, and more.
-- Implements pagination to efficiently display a large number of products.
-
-### Product Page
-- Provides comprehensive product details, including images, descriptions, and prices.
-- Allows users to add products to their shopping cart and leave reviews.
-
-### Shopping Cart
-- Users can add, modify, and remove products in their shopping cart.
-- Automatically calculates the total purchase amount.
-
-### Checkout Process
-- Integration with payment methods is out of the scope of this project .
-- Business logic still aplies, product will be removed from the digital werehuse on
-  succesful transactions
-
-
-### User Profile
-- Users can view and manage their profile information.
-- Access purchase order history 
-
-### User Reviews
-- Users can leave reviews and ratings for products.
-- Reviews are displayed on product pages.
-
-### Admin Panel
-- Administrators have access to a control panel where they can:
-  - Add, edit, and delete products in the database.
-
-
-## Technologies Used
-
-- **Frontend**: Angular
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Authentication**: JSON Web Tokens (JWT)
-
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+As I engaged with Angular, I found myself increasingly drawn to the React approach to front-end development. I appreciate the learning curve with Angular, which has provided me a solid foundation. However, I resonate more with the philosophies and methodologies encapsulated in React. Hence, I've decided to revert to React for the front-end aspect of this project. This shift aligns with my preference and the industry’s trending affinity towards React, while also ensuring that I am well-equipped to work with Angular should future projects necessitate it.
